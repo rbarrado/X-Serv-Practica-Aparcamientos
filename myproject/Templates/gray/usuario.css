@@ -1,0 +1,6 @@
+/* standard elements */
+
+body{
+	font-size: {{Tamano|safe}};
+	color: {{Color|safe}};
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<meta name="description" content="description"/>
+<meta name="keywords" content="keywords"/>
+<meta name="author" content="author"/>
+<link rel="stylesheet" type="text/css" href="/static/default.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="/usuario.css" media="screen"/>
+<link rel="shorcut icon" href="/static/img/icono.jpg" type="image/icon"/>
+<title>Aparcamientos Madrid</title>
+</head>
+
+<!-- default margin = default layout -->
+<body style="margin: 0 12%;">
+
+<div class="container">
+
+	<style>
+		a { color: #1E90FF; } /* CSS link color */
+		</style>
+
+	<div class="header">
+		<div id="banner">
+				<img src="/static/img/banner.jpg"/>
+	 </div>
+	</div>
+
+	<div class="stripes"><span></span>
+	</div>
+
+	<div class="nav">
+		<a href="http://localhost:1234">Inicio</a>
+		{% block Todos %}
+			<a href="http://localhost:1234/aparcamientos">Todos</a>
+		{% endblock %}
+		{% block Ayuda %}
+			<a href="http://localhost:1234/about">About</a>
+		{% endblock %}
+		<div class="clearer"><span></span></div>
+	</div>
+
+	<div class="stripes"><span></span></div>
+
+	<div class="main">
+
+		<div class="right">
+			<div class="Log">
+			{% block Log %}
+			 {{Log|safe}}
+			{% endblock %}
+			{{Logout|safe}}
+		 </div>
+		 <div class="Usuarios">
+			 <h1>Paginas de los usuarios</h1>
+			 <h1>                        </h1>
+			 {{Usuarios|safe}}
+		 </div>
+		</div>
+
+		<div class="left">
+			<div class="content">
+				<div class="Boton">
+						{{Boton|safe}}
+				</div>
+				{% block Lista %}
+				<div class="Lista">
+					<h1>Lista de Aparcamientos</h1>
+					<h1>                        </h1>
+					 {{Lista|safe}}
+				</div>
+				 {% endblock Lista %}
+			</div>
+		</div>
+
+	</div>
+
+	<div class="clearer"><span></span></div>
+	</div>
+
+	<div class="footer">
+		<div id="footer">
+						{{footer|safe}}
+		</div>
+	</div>
+
+
+</body>
+
+</html>
